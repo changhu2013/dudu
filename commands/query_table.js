@@ -8,11 +8,11 @@ var async = require('async');
 //创建controller
 function controller(rl, stage, config){
   var input_data = {};
-  var input_questions = _.get(stage, 'controller.input_questions', []);
-  var base_folder = path.resolve(__dirname, _.get(stage, 'controller.base_folder'));
+  var questions = _.get(stage, 'controller.questions', []);
+  var base = path.resolve(__dirname, _.get(stage, 'controller.base'));
   var template = require('../tmpls')(_.get(stage, 'controller.template'));
 
-  async.eachLimit(input_questions, 1, function(item, next){
+  async.eachLimit(questions, 1, function(item, next){
     var question = _.get(item, 'question');
     var field = _.get(item, 'field');
 
@@ -21,7 +21,7 @@ function controller(rl, stage, config){
       next();
     });
   }, function(err){
-    var folder_name = base_folder + '/' + _.get(input_data,'folder_name');
+    var folder_name = base + '/' + _.get(input_data,'folder_name');
     var controller_name = _.get(input_data, 'controller_name') + 'Controller.php';
     var file_name = folder_name + '/' + controller_name;
 

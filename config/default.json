@@ -5,9 +5,9 @@
       "command" : "./commands/query_table",
       "stage" : {
         "controller" : {
-          "base_folder" : "../app/Http/Controllers",
+          "base" : "../app/Http/Controllers",
           "template" : "query_table_controller",
-          "input_questions" : [{
+          "questions" : [{
             "question" : "请输入存放文件夹名字 : ",
             "field" : "folder_name"
           }, {
@@ -18,8 +18,16 @@
             "field" : "repository_name"
           }]
         },
+        "repository" : {
+          "base" : "../app/Repositories",
+          "template" : "query_table_repository",
+          "questions" : [{
+            "question" : "",
+            "field" : ""
+          }]
+        },
         "view" : {
-          "base_folder" : "",
+          "base" : "",
           "template" : ""
         }
       }
