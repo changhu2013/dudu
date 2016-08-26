@@ -1,0 +1,40 @@
+{
+  "menu" : {
+    "1" : {
+      "title" : "查询列表",
+      "command" : "./commands/query_table",
+      "stage" : {
+        "controller" : {
+          "base_folder" : "../app/Http/Controllers",
+          "template" : "query_table_controller",
+          "input_questions" : [{
+            "question" : "请输入存放文件夹名字 : ",
+            "field" : "folder_name"
+          }, {
+            "question" : "请输入Controller名字 : ",
+            "field" : "controller_name"
+          }, {
+            "question" : "请输入Reposotory名字 : ",
+            "field" : "repository_name"
+          }]
+        },
+        "view" : {
+          "base_folder" : "",
+          "template" : ""
+        }
+      }
+    },
+    "2" : {
+      "title" : "详情页面",
+      "command" : "./commands/single_detail"
+    },
+    "3" : {
+      "title" : "多卡片页面",
+      "command" : "./commands/muli_detail"
+    },
+    "q" : {
+      "title" : "退出",
+      "command" : "./commands/exit"
+    }
+  }
+}

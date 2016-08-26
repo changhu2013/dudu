@@ -1,0 +1,26 @@
+<?php
+namespace App\Http\Controllers\<%= folder_name%>;
+
+use Auth;
+use Log;
+use App\Http\Controllers\Controller AS BaseController;
+
+class <%= controller_name%>Controller extends BaseController
+{
+
+    private $repository;
+
+    public function __construct(<%= repository_name%> $repository)
+    {
+      $this->repository = $repository;
+    }
+
+    /**
+     * 查询页面
+     */
+    public function list($request)
+    {
+        //TODO : 添加列表相关内容
+    }
+}
+?>
